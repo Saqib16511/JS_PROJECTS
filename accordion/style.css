@@ -43,6 +43,9 @@ h1{
 .accordion-content{
     display: none;
 }
+.active .accordion-content{
+    display: block;
+}
 .accordion_title.active + .accordion-content{
     display: block;
 }
@@ -50,6 +53,6 @@ h1{
     font-size: 20px;
     color: black;
 }
-.accordion_title.active i{
+.accordion_item.active i{
     transform: rotate(180deg);
 }

@@ -16,41 +16,79 @@ const data = [
     },
 ];
 
-const accordionWrapper = document.querySelector('.accordion');
+// // const accordionWrapper = document.querySelector('.accordion');
 
-function accordiondata(){
-    accordionWrapper.innerHTML = data
+// // function accordiondata(){
+// //     accordionWrapper.innerHTML = data
+// //     .map(
+// //         item=>`<div class = 'accordion_item'>
+// //         <div class = "accordion_title">
+// //         <h3>${item.question}</h3>
+// //         <i class="fa-solid fa-arrow-down"></i> 
+// //         </div>
+// //         <div class="accordion-content">
+// //         <p>${item.answer}</p></div>
+// //         </div>`
+// //     )
+// //     .join(" ");    
+// // };
+// // accordiondata()
+
+// // const accordiontitles = document.querySelectorAll('.accordion_title');
+
+// // console.log("=====================")
+// // console.log(accordiontitles)
+// // console.log("=====================")
+
+// // accordiontitles.forEach(currentitem =>{
+// //     currentitem.addEventListener('click',(event)=>{
+// //         if(currentitem.classList.contains('active')){
+// //             currentitem.classList.remove('active')
+// //         }else{
+// //             let getactiveclass = document.querySelectorAll('.active');
+// //             getactiveclass.forEach(activeitem=>{
+// //                 activeitem.classList.remove('active')
+// //             });
+// //             currentitem.classList.add('active')
+// //         }
+
+// //     });
+// });
+
+
+const accordiondiv = document.querySelector('.accordion');
+
+function accor(){
+    accordiondiv.innerHTML =data
     .map(
-        item=>`<div class = 'accordion_item'>
-        <div class = "accordion_title">
+        item=>`<div class='accordion_item'>
+        <div class="accordion_title">
         <h3>${item.question}</h3>
-        <i class="fa-solid fa-arrow-down"></i> 
+        <i class="fa-solid fa-arrow-down"></i>
         </div>
-        <div class="accordion-content">
-        <p>${item.answer}</p></div>
+        <div class='accordion-content'>
+        <p> ${item.answer}</p>
+        </div>
         </div>`
     )
-    .join(" ");    
+    .join(" ");
 };
-accordiondata()
+accor();
+const acorbtn = document.querySelectorAll(".accordion_item");
+const accorcon = document.querySelectorAll('.accordion-content');
+// console.log(accorcon[0])
+acorbtn.forEach((Element)=>{
+    Element.addEventListener('click',()=>{
+        if(!Element.classList.contains('active')){
+            acorbtn.forEach((off)=>{
+                off.classList.remove('active')
+            })
+            Element.classList.add('active');
 
-const accordiontitles = document.querySelectorAll('.accordion_title');
+            }else{
+                Element.classList.remove('active')
+            }
+        
+    })
+})
 
-console.log("=====================")
-console.log(accordiontitles)
-console.log("=====================")
-
-accordiontitles.forEach(currentitem =>{
-    currentitem.addEventListener('click',(event)=>{
-        if(currentitem.classList.contains('active')){
-            currentitem.classList.remove('active')
-        }else{
-            let getactiveclass = document.querySelectorAll('.active');
-            getactiveclass.forEach(activeitem=>{
-                activeitem.classList.remove('active')
-            });
-            currentitem.classList.add('active')
-        }
-
-    });
-});

@@ -2,6 +2,7 @@
 const hexbtn = document.querySelector(".hex-btn");
 const hexcode = document.querySelector(".hex-color-value");
 const hexbody = document.querySelector(".hex-color-container");
+const hexcopybtn = document.querySelector("#hex-btn-copy")
 
 hexbtn.addEventListener('click', ()=>{
     let characterSet = '0123456789ABCDEF';
@@ -13,7 +14,15 @@ hexbtn.addEventListener('click', ()=>{
     hexcode.innerHTML = `#${hexcoloroutput}`;
     hexbody.style.background = `#${hexcoloroutput}`;
     hexbtn.style.color = `#${hexcoloroutput}`;
+    hexcopybtn.style.color = `#${hexcoloroutput}`
 });
+function copycolorcode(){
+    // console.log(hexcode.innerHTML)
+    navigator.clipboard.writeText(hexcode.innerHTML);
+    alert('Hex color is copied')
+};
+hexcopybtn.addEventListener("click", copycolorcode);
+
 
 //  RGB COLOR GENERATOR
 const rgbbtn = document.querySelector("#rgb-btn");
@@ -21,7 +30,8 @@ const red = document.getElementById("red");
 const green = document.getElementById("green");
 const blue = document.getElementById("blue");
 const rgbcode = document.querySelector(".rgb-color-value");
-const rgbbody = document.querySelector(".rgb-color-container")
+const rgbbody = document.querySelector(".rgb-color-container");
+const rgbcopybtn = document.querySelector("#rgb-btn-copy")
 
 
 rgbbtn.addEventListener('click',()=>{
@@ -32,5 +42,9 @@ rgbbtn.addEventListener('click',()=>{
     rgbcode.innerHTML = `rgb(${redval},${greaval},${blueval})`;
     rgbbody.style.background = `rgb(${redval},${greaval},${blueval})`;
     rgbbtn.style.color = `rgb(${redval},${greaval},${blueval})`;
-
-})
+    rgbcopybtn.style.color = `rgb(${redval},${greaval},${blueval})`;
+});
+rgbcopybtn.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(rgbcode.innerHTML);
+    alert('rgb color id copied');
+});
