@@ -28,7 +28,6 @@ function fetchmethod(){
     const fetchrequest = fetch(apiurl);
     fetchrequest.then(response=> response.json()).then((result)=>displayresult(result)).catch((e)=>console.log(e));
 };
-
 async function fetchusingasyncawait(){
     const response = await fetch(apiurl);
     const result = await response.json();
