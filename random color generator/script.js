@@ -7,8 +7,14 @@ const hexcopybtn = document.querySelector("#hex-btn-copy")
 hexbtn.addEventListener('click', ()=>{
     let characterSet = '0123456789ABCDEF';
     let hexcoloroutput = "";
-    for(i = 0,charlen = characterSet.length; i < 6;i++){
-        hexcoloroutput += characterSet.charAt(Math.floor(Math.random() * charlen));
+    let charlen = characterSet.length;
+    for(i = 0; i < 6; i++){
+        let randVal = Math.random();
+        console.log("before randval", randVal)
+
+        randVal = randVal * charlen;
+        console.log("after randval", randVal)
+        hexcoloroutput += characterSet.charAt(Math.floor(randVal));
     };
     // console.log(hexcoloroutput);
     hexcode.innerHTML = `#${hexcoloroutput}`;
