@@ -6,44 +6,100 @@
 }
 .container{
     width: 100%;
-    max-height: 100vh;
+    min-height: 100vh;
     padding: 20px;
-    font-size: 20px;
-    font-weight: bold;
+    background: rgba(140, 123, 151, 0.76);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
 }
 .card-container{
-    width: 350px;
-    height: 400px;
+    width: 300px;
+    height: 500px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: column;
     border: 1px solid rgba(191, 109, 8, 0.735);
     border-radius: 5px;
-    background-color: #e89f3884;
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
     margin: 0 10px;
     cursor: pointer;
+    background: cornsilk;
+    background: linear-gradient(-45deg,rgba(119, 24, 208, 0.251),rgba(231, 148, 32, 0.531),rgba(17, 222, 219, 0.337));
+    background-size: 400% 400%;
     color:  rgba(33, 31, 22, 0.748);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.23);
+    animation: cardcon-anime 4s linear infinite alternate;
+}
+@keyframes cardcon-anime{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 100% 0%;
+    }
 }
 .card-container:hover{
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.401);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.351),-2px -1px 5px rgba(0, 0, 0, 0.218);
     transition: 0.5s;
-    background: rgba(240, 185, 47, 0.711);
 
+}
+.middiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    color: rgb(72, 31, 33);
+    text-align: center;
+
+}
+.spandiv span{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
 }
 .thumbnail{
     width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 .thumbnail img{
     width: 100%;
+    height: 100%;
     border-radius: 4px;
 }
-.thumbnail img:hover{
-    transform: scale(1.2);
-    transition: 0.6s;
+.label{
+    font-weight: 500;
 }
 .context{
     font-weight: 400;
     font-family: cursive;
+}
+.lowderiv{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(134, 56, 59);
+    padding: 10px 10px;
+    align-items: center;
+}
+.cartdiv button{
+    border: 2px solid rgb(134, 56, 59);
+    border-radius: 7px;
+    padding: 8px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(134, 56, 59);
+    background: cornsilk;
+    cursor: pointer;
+}
+.cartdiv button:hover{
+    box-shadow: inset 0.5px 0.5px 5px  rgb(134, 56, 59);
+    transition: 0.08s;
 }

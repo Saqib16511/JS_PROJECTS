@@ -48,7 +48,7 @@ function appendincontainer(getresult){
         id.textContent = prod.id
 
         // AppendChilds in CardBody
-        cardbody.append(thumbnail);
+        cardbody.app(thumbnail);
         cardbody.append(title);
         cardbody.append(price);
         cardbody.append(descript);
